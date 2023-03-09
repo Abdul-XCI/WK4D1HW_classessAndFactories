@@ -1,6 +1,6 @@
 // creating class
 class Hamster {
-    constructor(name, price = 15, owner = "")
+    constructor(name, owner = "", price = 15,)
     {
         this.name = name;
         this.owner = owner;
@@ -59,23 +59,23 @@ class Person
 
     eat()
     {
-        this.weight++;
-        this.mood++;
+        this.weight += 1;
+        this.mood += 1;
     }
 
     exercise()
     {
-        this.weight--;
+        this.weight -= 1;
 
     }
 
     ageUp()
     {
-        this.age++;
-        this.height++
-        this.weight++;
-        this.mood--;
-        this.bankAccount+= 10;
+        this.age += 1;
+        this.height += 1;
+        this.weight += 1;
+        this.mood -= 1;
+        this.bankAccount += 10;
     }
 
     buyHamster(hamsterObj)
@@ -90,7 +90,12 @@ class Person
 
 
 // instantiates a new person
-const personTimmy = new Person('Timmy', 5)
+const personTimmy = new Person('Timmy');
+
+// age Timmy 5 years
+for (let i = 0; i < 5; i++){
+    personTimmy.ageUp();
+}
 
 // have timmy eat five times
 for (let i = 0; i < 5; i++){
@@ -113,7 +118,7 @@ for (let i = 0; i < 9; i++){
 }
 
 // creat a hasmter named gus
-const hamsterGus = new Hamster('Gus', 0, 'Timmy')
+const hamsterGus = new Hamster('Gus', 'Timmy')
 
 // have timmy buy gus
 personTimmy.buyHamster(hamsterGus); 
@@ -133,6 +138,8 @@ for (let i = 0; i < 2; i++){
     personTimmy.exercise();
 }
 
+// console.log(timmy and his properties)
+console.log(personTimmy, '\n');
 
 class Dinner {
     constructor(appetizer, entree, dessert){
