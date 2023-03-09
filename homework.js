@@ -96,12 +96,16 @@ const personTimmy = new Person('Timmy', 5)
 for (let i = 0; i < 5; i++){
     personTimmy.eat();
 }
-
+//console.log('Have Timmy eat five times - We expect weight to increase');
+//console.log(personTimmy);
 
 // have timmy exercise 5 times
 for (let i = 0; i < 5; i++){
     personTimmy.exercise();
 }
+//console.log('Have Timmy exercise five times - We expect weight to decrease');
+//console.log(personTimmy);
+
 
 // age Timmy 9 years
 for (let i = 0; i < 9; i++){
@@ -129,6 +133,47 @@ for (let i = 0; i < 2; i++){
     personTimmy.exercise();
 }
 
-// next commit includes the following
-// updated the constructor method in person class;
-// updated the constructed method in Hamster class
+
+class Dinner {
+    constructor(appetizer, entree, dessert){
+        this.appetizer = appetizer;
+        this.entree = entree;
+        this.dessert = dessert;
+
+    }
+}
+
+class Chef 
+{
+  constructor(chefName)
+  {
+    this.chefName = chefName;
+    this.dinnersCooked = [];
+    
+  }
+
+  cookDinner(item1, item2, item3)
+  {
+    
+    const newDinner = new Dinner(item1, item2, item3);
+    //console.log(newDinner)
+    this.dinnersCooked.push(newDinner);
+    
+  }
+
+  listDinnersCooked()
+  {
+    //console.log(this.dinnersCooked)
+    console.log(`Chef ${this.chefName} cooked the following dinners: `, this.dinnersCooked);
+  }
+}
+
+const chefAbdul = new Chef('Abdul')
+
+// let the chef cook 3 dinners
+chefAbdul.cookDinner('Spinach and artichoke dip', 'Vegetarian lasagna', 'Chocolate Lave');
+chefAbdul.cookDinner('Crispy fried calamari', 'Grilled chicken', 'creamy custard');
+chefAbdul.cookDinner('Grilled shrimp skewers', 'Grilled salmon', 'Cheesecake ');
+
+// Log the dinners the chef cooked
+chefAbdul.listDinnersCooked();
